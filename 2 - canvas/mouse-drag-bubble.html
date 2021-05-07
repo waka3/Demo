@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滑动泡泡</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #canvas {
+            display: block;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+
+</canvas>
+<script>
+    /*
+    /* canvas的绘制特点：
+    /* 1.描述绘制路径；
+    /* 2.执行绘制
+    */
+    var canvas = document.querySelector('#canvas');
+    //canvas2d绘制环境
+    var ctx = canvas.getContext('2d');
+    var ballList = [];
+    init();
+
+    //获取当前浏览器窗口的大小并赋值给canvas
+    function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    // 事件绑定，canvas的大小根据浏览器的变化而变化
+    window.onresize = init;
+
+    function rnd(min, max) {
+        return (max - min) * Math.random() + min
+    }
+
+    //小球的构造器
+    function Ball(x, y) {
+        this.x = x;
+        this.y = y;
+        this.r = 30;
+        this.vx = rnd(-5, 5);
+        this.vy = rnd(-5, 5);
+        this.a = 1;
+        this.va = 0.97;
+        this.color = '#' + Math.floor(Math.random() * 1000000);
+    }
+
+    Ball.prototype = {
+        updata: function () {
+            this.y += this.vy;
+            this.x += this.vx;
+            this.r -= 0.3;
+            this.a *= this.va;
+            if (this.r < 0) {
+                this.r = 50;
+            }
+        }
+    };
+    var y = 100;
+    render();
+    var ball = new Ball(100, 100);
+
+    function render() {
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        ballList.forEach(function(item,i){
+            ctx.beginPath();
+            ctx.fillStyle = item.color;
+            ctx.globalAlpha = item.a;
+            ctx.globalCompositeOperation = 'lighter';
+            ctx.arc(item.x, item.y, item.r, 0, Math.PI * 2, false);
+            /*obj.arc(''x坐标，y坐标，半径，起始点，旋转半径，逆时针/顺时针)*/
+            ctx.fill();
+            item.updata();
+            if (item.a < 0.05) {
+                ballList.splice(i, 1);
+                i--;
+            }
+        });
+        requestAnimationFrame(render);//浏览器刷新触发render
+    }
+
+    //根据鼠标移动绘制小球
+    canvas.onmousemove = function (ev) {
+        ballList.push(new Ball(ev.offsetX, ev.offsetY));
+    }
+</script>
+</body>
+</html>

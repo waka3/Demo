@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--<link rel="stylesheet" href="./assets/css/base.css">-->
+  <link rel="stylesheet" href="./rwd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+
+    .column img {
+      width: 100%;
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Responsive Image Grid</h1>
+    <p>Resize the browser window to see the responsive effect.</p>
+  </div>
+
+  <!-- Photo Grid -->
+  <div class="row">
+    <div class="column">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+    </div>
+    <div class="column">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+    </div>
+    <div class="column">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+    </div>
+    <div class="column">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+      <img src="./assets/imgs/img_chania.jpg">
+    </div>
+  </div>
+</body>
+
+</html>

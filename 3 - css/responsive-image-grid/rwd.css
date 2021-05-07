@@ -1,0 +1,35 @@
+*{box-sizing: border-box;}
+/*响应式网格*/
+.row::after {content: "";clear: both;display: table;}
+/*For mobile*/
+[class*="col-"] {float: left; width: 100%}
+.wy-col {float: left;width: 100%}
+@media only screen and (min-width: 600px) {
+    .wy-col-s1 {width: 8.33333%}
+    .wy-col-s2 {width: 16.66666%}
+    .wy-col-s3 {width: 24.99999%}
+    .wy-col-s4 {width: 33.33333%}
+    .wy-col-s5 {width: 41.66666%}
+    .wy-col-s6 {width: 49.99999%}
+    .wy-col-s7 {width: 58.33333%}
+    .wy-col-s8 {width: 66.66666%}
+    .wy-col-s9 {width: 74.99999%}
+    .wy-col-s10 {width: 83.33333%}
+    .wy-col-s11 {width: 91.66666%}
+    .wy-col-s12 {width: 99.99999%}
+}
+@media only screen and (min-width: 768px) {
+    .wy-col-1 {width: 8.33333%}
+    .wy-col-2 {width: 16.66666%}
+    .wy-col-3 {width: 24.99999%}
+    .wy-col-4 {width: 33.33333%}
+    .wy-col-5 {width: 41.66666%}
+    .wy-col-6 {width: 49.99999%}
+    .wy-col-7 {width: 58.33333%}
+    .wy-col-8 {width: 66.66666%}
+    .wy-col-9 {width: 74.99999%}
+    .wy-col-10 {width: 83.33333%}
+    .wy-col-11 {width: 91.66666%}
+    .wy-col-12 {width: 99.99999%}
+}
+
