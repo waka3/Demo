@@ -1,0 +1,34 @@
+<!-- 浏览器无法识别这些代码: require, exports 等 浏览器都无法识别 -->
+<!-- <script src="./src/index.js"></script> -->
+
+<!-- 完全es5的语法解析 webpack 原理 -->
+<script>
+  // 实现多模块引入
+  void function(list){
+    // 实现对require方法的支持
+    function require(file) {
+      // 实现对exports对象的支持
+      var exports = {}; // 声明exports对象
+
+      // 使用自运行函数，可以避免变量污染
+      void function (exports, code) {
+        eval(code) // eval执行，给exports对象新增key value
+      }(exports, list[file])
+      return exports;
+    }
+
+    require('index.js');
+
+  }({
+    'index.js': `
+      var add = require('add.js').default
+      console.log(add(1, 2));
+    `,
+    'add.js': `
+      exports.default = function (a, b) { return a + b }
+    `
+  })
+  // var add = exports.default;
+  // console.log(add(1, 2));
+  
+</script>
