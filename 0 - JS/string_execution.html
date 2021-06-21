@@ -1,0 +1,10 @@
+<script>
+  // 把字符串当作JS代码执行
+  let a = 1, b = 1, c = 1, d = 1;
+  eval('a=a+1');
+  (new Function('b++'))();
+  setTimeout('c = 2', 0); // setInterval同理
+  console.log('a:' , a);
+  console.log('b:' , b);
+  console.log('c:' , c); // 由于setTimeout异步执行，所以c打印出来还是1
+</script>

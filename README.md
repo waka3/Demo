@@ -2,6 +2,9 @@
 > 各类学习的小demo
 
 ### js 基础相关
+- getDataExportExcel.html 获取网站数据，并导出成excel
+- macroTask_microJob.js 同步异步，宏观任务与微观任务
+- string_execution 把字符串当作JS代码执行
 
 ### animation 动画相关
 - 3d-drag-images 3d拖拽相册
