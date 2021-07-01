@@ -31,3 +31,19 @@ p.then(res => {
 
 console.log(4);
 
+// async function async1() {
+//   console.log(2)
+//   await async2();
+//   console.log(7)
+// }
+// async function async2() {
+//   console.log(3)
+//   await async3();
+//   console.log(6)
+// }
+// async function async3() {
+//   console.log(4)
+// }
+// console.log(1);
+// async1();
+// console.log(5);

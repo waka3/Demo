@@ -5,6 +5,7 @@
 - getDataExportExcel.html 获取网站数据，并导出成excel
 - macroTask_microJob.js 同步异步，宏观任务与微观任务
 - string_execution 把字符串当作JS代码执行
+- variable.html 变量执行环境
 
 ### animation 动画相关
 - 3d-drag-images 3d拖拽相册
@@ -38,6 +39,7 @@
 
 
 ### 各类在线工具地址库
+- [AST,语法树分析工具](https://astexplorer.net/) 
 - [react-jsx-jsfiddle](https://jsfiddle.net/boilerplate/react-jsx) 
 - [js在线压缩1](https://tool.lu/js/), [js在线压缩2](https://tool.lu/js/)
 - [datav](http://datav.aliyun.com/tools/atlas/#&lat=30.332329214580188&lng=106.72278672066881&zoom=3.5), 地图选择器，地图经纬度geo.json数据

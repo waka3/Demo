@@ -1,0 +1,28 @@
+<!-- 
+  Script对象
+  Window对象：全局作用域
+  Local对象：局部作用域
+
+  var: 声明的变量会变添加到window属性上，可以用window.x访问到;
+      由于变量提升，先使用再声明得到undefined，并不会报错;
+      允许重复声明, 会进行一个值的内容覆盖;
+  let、const: 声明的变量无法用window.x去访问，他们属于Script对象属性;
+      无法先声明后使用;
+      不允许重复声明; Uncaught SyntaxError: Identifier 'a' has already been declared
+  let: 声明动态变量
+  const: 声明静态变量，这个静态针对栈空间的静态属性而言, 如声明基本类型的变量是无法修改，但是用于声明引用类型的变量时是允许允许修改的；
+         不允许声明不赋值，会提示初始化声明的语法错误 Uncaught SyntaxError: Missing initializer in const declaration
+ -->
+<script>
+  // chrome source 打断点查看查看属性
+  debugger
+  var a = 3; // Scope -> Global(window)
+  let b = 4; // Scope -> Script
+  const c = 5; // Scope -> Script
+  function fnTest() {
+    var aa = 111;	// Scope -> Local
+    let bb = 111;	// Scope -> Local
+    const cc = 111;	// Scope -> Local
+  }
+  fnTest();
+</script>
