@@ -1,1 +1,1 @@
-exports.default = function add(a, b) { return a + b };
+exports.default = (a, b) => a + b;
