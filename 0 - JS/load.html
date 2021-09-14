@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    console.log('script [开始]')
+  </script>
+</head>
+
+<body>
+  <div id="app">{{msg}}</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <script src='./vue.life-cycle.js'></script>
+  <script>
+    /**
+     * 语法1：$(document).ready(function)
+     * 语法2：$().ready(function)
+     * 语法3：$(function)
+     */
+    $(document).ready(function () {
+      console.log('jquery ready');
+    });
+
+    $(window).load(function () {
+      console.log('jquery load');
+    });
+
+    /**
+     * 当纯HTML被完全加载以及解析时，DOMContentLoaded 事件会被触发，而不必等待样式表，图片或者子框架完成加载。
+     * 用来判断 dom 完全加载以及解析
+     */
+    window.addEventListener('DOMContentLoaded', function () {
+      console.log('DOMContentLoaded');
+    })
+    /**
+     * 当页面加载的时触发, 与 DOMContentLoaded 的区别在于, load 在页面 DOM 加载后立即触发，无需等待服务器资源加载完成
+     * 因此 load 晚于 DOMContentLoaded 触发
+     */
+    window.onload = function () {
+      console.log('onload');
+    }
+
+    console.log('vue start')
+    new Vue({
+      el: '#app',
+      data: {
+        msg: 3
+      },
+      beforeCreate() { console.log('vue beforeCreated'); },
+      created() { console.log('vue created'); },
+      beforeMount() { console.log('vue beforeMounted'); },
+      mounted() { console.log('vue mounted'); },
+    })
+    console.log('vue end')
+  </script>
+
+</body>
+
+</html>
