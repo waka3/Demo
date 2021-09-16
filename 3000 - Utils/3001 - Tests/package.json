@@ -1,0 +1,12 @@
+{
+  "name": "util-test",
+  "version": "1.0.0",
+  "author": "wangyj",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^27.2.0"
+  }
+}
