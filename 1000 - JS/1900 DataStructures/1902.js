@@ -1,6 +1,6 @@
 /**
  * @function LinkedList
- * @description JS迭代器（ES6引入）
+ * @description JS迭代器（ES6引入） 学习来源：https://www.30secondsofcode.org/articles/s/javascript-iterators
  * @param nodes {Array} 节点元素数组
  * for (let value of [Symbol.iterator]) {} -> TypeError: myList is not iterable
  * for (let prop/index in 枚举对象)

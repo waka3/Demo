@@ -1,7 +1,7 @@
 
 /**
  * @function DoublyLinkedList
- * @description 双向链表
+ * @description 双向链表 学习来源：https://www.30secondsofcode.org/articles/s/js-data-structures-doubly-linked-list
  * @param nodes {Array{Object}} 节点元素数组
  */
 class DoublyLinkedList{
