@@ -1,19 +1,19 @@
 {
-    "name": "wyj-autogeturl",
-    "version": "1.0",
-    "manifest_version": 2,
-    "description": "获取知识星球链接插件",
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_title": "知识星球链接",
-        "default_popup": "pages/get.html"
-    },
-    "content_scripts": [
-        {
-            "matches": ["https://wx.zsxq.com/dweb2/index/topic_detail/*"],
-            "js": ["js/content.js"],
-            "run_at": "document_start",
-            "all_frames": true
-        }
-    ]
+  "name": "wyj-autogeturl",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "获取知识星球链接插件",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "知识星球链接",
+    "default_popup": "pages/get.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wx.zsxq.com/dweb2/index/topic_detail/*"],
+      "js": ["js/xlsx.core.min.js", "js/excel.js", "js/content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
 }
