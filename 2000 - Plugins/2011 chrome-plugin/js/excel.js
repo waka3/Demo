@@ -53,12 +53,13 @@ function exportExcel(aList) {
   for (var i in sheet) {
     if (i.indexOf('A') !== -1) {
       sheet[i].l = { Target: sheet['B' + i.split('A')[1]].v };
-      sheet[i].s = { font: {color: {rgb: '' }, underline: true } };
+      sheet[i].s = { font: {color: {rgb: '1e80ffff' }, underline: true } };
     }
-    // if (i.indexOf('B') !== -1) {
-    //   sheet[i].l = { Target: sheet[i].v, Tooltip: sheet['A' + i.split('B')[1]].v };
-    // }
+    if (i.indexOf('B') !== -1) {
+      sheet[i].l = { Target: sheet[i].v, Tooltip: sheet['A' + i.split('B')[1]].v };
+      sheet[i].s = { font: {color: {rgb: '1e80ffff' }, underline: true } };
+    }
   }
-  sheet['!cols'] = [{ width: 60 }, { width: 0 }];
+  sheet['!cols'] = [{ width: 60 }, { hidden: true }];
   openDownloadDialog(sheet2blob(sheet), `导出合集.xlsx`);
 }
