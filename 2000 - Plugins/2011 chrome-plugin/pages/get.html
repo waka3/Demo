@@ -28,6 +28,13 @@ body{
   border-radius: 5px;
   cursor: pointer;
 }
+.autogeturl-split{
+  display: block;
+  width: 100%;
+  line-height: 44px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
 .autosetqwinfo-tips{
   padding-top: 10px;
   color: rgb(229, 255, 46);
@@ -38,6 +45,7 @@ body{
 <body>
 <div class="autogeturl-box">
   <div class="autogeturl-title">获取链接</div>
+  <input type="text" class="autogeturl-split" id="autogeturl-split" placeholder="请输入链接和标题分割方式，入: '：或 https'" />
   <div class="autogeturl-btn">
     <button id="autogeturl-btn">导出Excel</button>
   </div>
