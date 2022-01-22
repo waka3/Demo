@@ -1,4 +1,4 @@
-const { formatTime } = require('../../3003')
+const { formatTime } = require('../../1003')
 
 const date = new Date();
 const current = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, 0)}-${(date.getDate()).toString().padStart(2, 0)}`
