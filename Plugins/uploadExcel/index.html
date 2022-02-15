@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="./excel.js"></script>
+</head>
+
+<body>
+  <div class="app-container" id="app">
+    <upload-excel-component :on-success="handleSuccess" :before-upload="beforeUpload"></upload-excel-component>
+    <el-table :data="tableData" highlight-current-row style="width: 100%; margin-top:20px;">
+      <el-table-column v-for="item of tableHeader" :key="item" :prop="item" :label="item" />
+    </el-table>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          tableData: [],
+          tableHeader: []
+        }
+      },
+      methods: {
+        beforeUpload(file) {
+          const isLt1M = file.size / 1024 / 1024 < 1
+
+          if (isLt1M) {
+            return true
+          }
+
+          this.$message({
+            message: 'Please do not upload files larger than 1m in size.',
+            type: 'warning'
+          })
+          return false
+        },
+        handleSuccess({ results, header }) {
+          this.tableData = results
+          this.tableHeader = header
+          console.log(this.tableHeader)
+          console.log(this.tableData)
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>
