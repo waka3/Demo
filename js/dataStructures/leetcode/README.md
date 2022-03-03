@@ -16,6 +16,7 @@
 - [开根号Sqrt(x)](./easy/69.js)
 - [合并两个有序数组](./easy/88.js)
 - [验证回文串](./easy/125.js)
+- [Excel 表列序号](./easy/171.js)
 - [快乐数](./easy/202.js)
 
 #### Medium
