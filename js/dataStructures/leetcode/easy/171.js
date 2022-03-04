@@ -63,3 +63,5 @@ var titleToNumber = function (columnTitle) {
 console.log(titleToNumber('A'))
 console.log(titleToNumber('AB'))
 console.log(titleToNumber('ZY'))
+console.log(titleToNumber('BBYZ'))
+console.log(titleToNumber('BZ'))
