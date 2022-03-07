@@ -4,7 +4,8 @@
   "author": "wangyj",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "1007": "jest utils/1007.test.js"
   },
   "dependencies": {
     "jest": "^27.2.0"
