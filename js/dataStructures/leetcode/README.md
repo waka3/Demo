@@ -20,6 +20,7 @@
 - [Excel表列名称](./easy/168.js)
 - [Excel表列序号](./easy/171.js)
 - [快乐数](./easy/202.js)
+- [各位相加](./easy/258.js)
 
 #### Medium
 - [两数相加](./medium/2.js)
