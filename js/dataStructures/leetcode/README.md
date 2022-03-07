@@ -14,10 +14,11 @@
 - [加一](./easy/66.js)
 - [二进制求和](./easy/67.js)
 - [开根号Sqrt(x)](./easy/69.js)
+- [爬楼梯 - 斐波那契数列](./easy/70.js)
 - [合并两个有序数组](./easy/88.js)
 - [验证回文串](./easy/125.js)
 - [Excel表列名称](./easy/168.js)
-- [Excel 表列序号](./easy/171.js)
+- [Excel表列序号](./easy/171.js)
 - [快乐数](./easy/202.js)
 
 #### Medium
