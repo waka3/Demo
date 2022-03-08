@@ -11,6 +11,16 @@ function getDigitNum(num) {
   return nums
 }
 
+/**
+ * 判断是否整除
+ * @param {*} num 被除数
+ * @param {*} divisor 除数
+ */
+function isInteger(num, divisor) {
+  return num / divisor % 1 === 0
+}
+
 module.exports = {
-  getDigitNum
+  getDigitNum,
+  isInteger
 }
