@@ -21,6 +21,7 @@
 - [Excel表列序号](./easy/171.js)
 - [快乐数](./easy/202.js)
 - [各位相加](./easy/258.js)
+- [丑数](./easy/263.js)
 
 #### Medium
 - [两数相加](./medium/2.js)
