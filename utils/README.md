@@ -13,3 +13,4 @@
 - [fileDownload Excel文件下载处理](./1005.js)
 - [输出带颜色的console.log](./1006.js)
 - [输出数字每一位上的数字](./1007.js)
+- [把JSON数据导出JSON文件](./1008.mjs)
