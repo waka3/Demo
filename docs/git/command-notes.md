@@ -1,4 +1,4 @@
-### <font color=#"db1111">github相关</font>
+### <font color=#db1111>github相关</font>
 	1. github下载仓库的历史版本：
 		a. 查看全部commit历史
 		b. 切换到制定版本：
