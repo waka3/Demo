@@ -1,4 +1,5 @@
 ### <font color=#db1111>github相关</font>
+
 	1. github下载仓库的历史版本：
 		a. 查看全部commit历史
 		b. 切换到制定版本：
@@ -27,12 +28,12 @@
 		版本 <2.14.2 请重新下载安装覆盖
 	2. 用户名、密码：
 		a. 设置
-		git config --global user.name  "username"  
-		git config --global user.email  "email"
-		global是全局的git配置,  local是局部本地文件夹设置  设置是局部可以不加local
+      git config --global user.name  "username"  
+      git config --global user.email  "email"
+      global是全局的git配置,  local是局部本地文件夹设置  设置是局部可以不加local
 		b. 查询的时候去除后面具体值即可。查询的时候局部一定要加local
 	3. 获取git目录下的全部用户名密码：
-		>
+		> 
 		> git config --get-all user.email
 	4. 退出git log：字母Q
 	5. 退出vim：Esc退出编辑状态，ZZ退出
@@ -114,9 +115,9 @@
 		3. 恢复：把对应Hash文件名修改成原文的文件名，并复制回项目
 		(业务场景：【牢记，commit很重要】
 			1. git add .  提交了主分支代码到缓存区
-			2. Git checkout -b newBrach 新建分区
-			3. Git reset --hard [CommitId] 把指针指向某次提交记录
-			4. Git add 提交在缓存区的代码丢失
+			2. git checkout -b newBrach 新建分区
+			3. git reset --hard [CommitId] 把指针指向某次提交记录
+			4. git add 提交在缓存区的代码丢失
 		)
 			
 ### <font color=#db1111>本地分支相关</font>
