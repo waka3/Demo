@@ -2,6 +2,10 @@
 
 vue2.6.12 源码目录结构:
 ```js
+  scripts
+  ├── build.js        # 使用 rollup 构建不同平台代码
+  |—— config.js       # 构建相关的参数、文件路径定义
+  
   src
   ├── compiler        # 编译相关
     ├── codegen
@@ -26,6 +30,8 @@ vue2.6.12 源码目录结构:
   ├── shared          # 共享代码
 ```
 
+### [script](./SCRIPT.md)
+### src
 #### compiler
 > 包含vue.js编译相关的代码, 编译的工作可在构建时、在运行时，（较耗性能，不推荐运行编译）
 - 把 jsx 模板解析成 ast 语法树
