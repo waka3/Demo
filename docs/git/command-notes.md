@@ -78,7 +78,7 @@
 		4. git commit
 		5. git pull 
 		6. git push
-	推送代码到指定远程地址的：git pull [远程地址名称] [远程地址分支]
+	 > 推送代码到指定远程地址的：git pull [远程地址名称] [远程地址分支]
 		1. 若提示无法拉取不相关的历史：git pull origin master --allow-unrelated-histories
 		2. 若出现冲突处理即可
 		3. 推送存在多个分支： git push [远程地址名称]
