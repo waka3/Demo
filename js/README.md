@@ -5,6 +5,6 @@
 - [算法结构实现 dataStructures](./dataStructures/README.md)
 
 - [load 页面加载的顺序](./1001.html)
-- [变量执行环境](./1002.html)
+- [变量声明](./variableDeclaration.html)
 - [同步异步，宏观任务与微观任务](./1003.js)
-- [把字符串当作JS代码执行](./1004.html)
+- [把字符串当作JS代码执行](./executionString.html)

@@ -9,28 +9,32 @@
  * - 由JS引擎所在的宿主环境（Node / 浏览器）发起的任务，叫宏观任务。 浏览器是多线程执行的。
  *   可以发起宏观任务的API（发起的顺序是从左到右）：setTimeout、setInterval、setImmediate
  */
-setImmediate(() => {
-  console.log(7)
-}, 0)
 
-setTimeout(() => {
-  console.log(6)
-}, 0)
+/** 举例一 */
+// setImmediate(() => {
+//   console.log(7)
+// }, 0)
 
-console.log(1);
+// setTimeout(() => {
+//   console.log(6)
+// }, 0)
 
-const p = new Promise((resolve, reject) => {
-  console.log(2);
-  resolve();
-  console.log(3);
-})
+// console.log(1);
 
-p.then(res => {
-  console.log(5);
-})
+// const p = new Promise((resolve, reject) => {
+//   console.log(2);
+//   resolve();
+//   console.log(3);
+// })
 
-console.log(4);
+// p.then(res => {
+//   console.log(5);
+// })
 
+// console.log(4);
+
+
+/** 举例二 */
 // async function async1() {
 //   console.log(2)
 //   await async2();
@@ -47,3 +51,46 @@ console.log(4);
 // console.log(1);
 // async1();
 // console.log(5);
+
+/** 举例三 */
+// setTimeout(async () => {
+//   console.log(1)
+//   await async1();
+//   console.log(4)
+// }, 0)
+
+// function async1() {
+//   console.log(2)
+//   setTimeout(() => { 
+//     console.log(6)
+//     function name(){ };
+//   }, 0)
+//   console.log(3)
+// }
+
+// setTimeout(() => {
+//   console.log(5)
+// }, 0)
+
+
+/** 举例四 */
+setTimeout(async () => {
+  console.log(1)
+  await async1();
+  console.log(6)
+}, 0)
+
+function async1() {
+  console.log(2)
+  return new Promise((resolve, reject) => {
+    setTimeout(() => { 
+      console.log(5)
+      resolve();
+    }, 0)
+    console.log(3)
+  })
+}
+
+setTimeout(() => {
+  console.log(4)
+}, 0)
