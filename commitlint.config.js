@@ -24,7 +24,6 @@ module.exports = {
           'chore',
           'revert',
           'wip',
-          'mod',
           'workflow',
         ],
       ],
