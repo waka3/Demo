@@ -32,7 +32,7 @@
 <!-- 计算公式 -->
 <!-- 700 - 200 - 300 剩余200 做撑开计算，red的宽度是：200 * 2/3 + 200 = 333.34px  blue宽度是：200 * 1/3 + 300 = 366.67px -->
 ```
-> flex: flex-grow flex-shrink flex-basis
+> flex: flex-grow flex-shrink flex-basis, 默认值为：flex: 0 1 auto. 默认压缩不拉伸
 > flex: 1 1 auto  第一个数值代表子元素的撑开占比，第二个数值代表子元素的缩放占比，第三个值代表元素的宽度
 > 子元素的宽度：累加和超过父元素宽度时按缩放比例（flex-shrink）计算，累加和小于父元素宽度时按按缩放比例（flex-grow）计算
 > flex-basis
