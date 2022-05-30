@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React forwardRef</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Son(props) {
+      const { grandRef } = props
+      return <div>
+        <div>i am Son Component</div>
+        <span ref={grandRef}>想要获取的元素节点</span>
+      </div>
+    }
+
+    class Father extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+      render() {
+        return <div>
+          <Son grandRef={this.props.grandRef} />
+        </div>
+      }
+    }
+
+    const NewFather = React.forwardRef((props, ref) => {
+      return <Father grandRef={ref} {...props} />
+    })
+
+    class GrandFather extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+      node = null
+      componentDidMount() {
+        console.log(this.node)
+      }
+      render() {
+        return <div>
+          <NewFather ref={(node) => this.node = node} />
+        </div>
+      }
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<GrandFather />);
+  </script>
+</body>
+
+</html>
