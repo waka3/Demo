@@ -21,10 +21,10 @@
   - 可以写多个 hooks 来避免依赖过多
   - 例如获取数据这样的接口, 如果没有特殊要求, 可以写在组件外部, 或者写在 hooks 内部
   - 如果有不需要加入依赖的数据, 可以使用 useRef, useReducer 的方式来管理数据
-  - 在更新或者卸载组件的时候, 记得清楚副作用函数, 例如定时器, 没有完成异步请求 (可以结合 `ahooks` 中的 useRequest(cancel方法来取消请求))
+  - 在更新或者卸载组件的时候, 记得清除副作用函数, 例如定时器, 没有完成异步请求 (可以结合 `ahooks` 中的 useRequest(cancel方法来取消请求))
 - useCallback
   - 使用 useCallback 是有性能消耗的, 简单的函数就不要使用 useCallback 包装
-  - 需要比较引用的场景，如 useEffect，又或者是配合React.Memo使用 ([代码参考](https://segmentfault.com/a/1190000022988054))
+  - 需要比较引用的场景：如 useEffect，又或者是配合React.Memo使用 ([代码参考](https://segmentfault.com/a/1190000022988054))
   - 能写到组件外部的就写到组件外部
 - useRef
   - 会频繁变化的属性, 且不是强依赖关系的, 用 useRef
@@ -34,10 +34,10 @@
   当你的 useEffect 里面的操作需要处理DOM,并且会改变页面的样式,就需要用这个,否则可能会出现出现闪屏问题
 - 技巧
   - 组件的一个属性如果是 dom, 要考虑是否是 Ref|Function|Dom|Selector 等类型
-    - getTargetElement 这个函数挺好用, 可以获取 Ref|Function|Dom 类型对应的dom节点
+  - getTargetElement 这个函数挺好用, 可以获取 Ref|Function|Dom 类型对应的dom节点
   - 参数类型. 解决状态同步问题的时候, 像 setState 的参数可能是`value`, 也可能是个 `function`. 在封装自己的组件时候也可能会用到
   - 如果要注入默认参数, 又多个地方会用到.  可以用 `createXXX({...params}) => useXXX;   useXXX()` 这种形式
-  - useReducer的第一个参数 reducer 不一定要安装严格的规范来做, 可以类似 `const toggleReducer = (state, nextValue) => (typeof nextValue === 'boolean' ? nextValue : !state);`. 以此来达到类似 ref 在处理数据时候的效果
+  - useReducer的第一个参数 reducer 不一定要按照严格的规范来做, 可以类似 `const toggleReducer = (state, nextValue) => (typeof nextValue === 'boolean' ? nextValue : !state);`. 以此来达到类似 ref 在处理数据时候的效果
 - 注意事项
   - 开启 eslint : eslint-plugin-react
   - 如果函数中出现异步更新, 例如 setTimeout, Promise. 且在短时间内会触发多次, 有可能会出现取值错误
