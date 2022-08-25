@@ -84,6 +84,22 @@
 - 其他： if instanceof == !== 三目 ...
 
 
+## Type Muanipulation 类型操作
+- T 泛型
+
+- keyof T, 返回 T 的全部key;
+
+- typeof T, 返回 T 的类型;
+
+- 索引取值: 用于数组 / 对象
+    ```ts
+        type Person = { age: number; name: string; alive: boolean };
+        type Age = Person["age"];
+        // Age = number
+        type I1 = Person["age" | "name"];
+        // I1 = string | number
+    ```
+
 ## Utility Types 实用的工具类型
 - Partial<Type>, 将 Type 内的key 都变为可选;
 
@@ -139,8 +155,3 @@
         type T0 = ReturnType<() => string>;
         // T0 = string
     ```
-
-
-- keyof T, 获取 T 的全部key;
-
-- readonly id: string;  id 为只读
