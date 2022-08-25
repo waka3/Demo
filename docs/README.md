@@ -2,3 +2,4 @@
 
 - [git相关](./git/README.md)
 - [面试题相关和题解](./Interview.md)
+- [ts相关](./Interview.md)
