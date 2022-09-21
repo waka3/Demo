@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-shadow 被 overflow 遮挡</title>
+  <style>
+    ul,
+    ul li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.wrap {
+      display: flex;
+      width: 300px;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    ul.wrap1 {
+      /* 补充的 padding 间距和box的阴影宽度一致来解决 overflow 隐藏截断 */
+      padding-left: 10px;
+      /* 补充 margin 负值抵消 padding 的位置偏移影响 */
+      margin-left: -10px;
+    }
+
+    ul.wrap li {
+      flex: 0 0 auto;
+      align-items: center;
+      width: 150px;
+      height: 50px;
+      border-radius: 10px;
+      text-align: center;
+      background: white;
+      margin-right: 20px;
+      box-shadow: 0 0 10px 0 #0000003d;
+    }
+
+    .container {
+      padding: 20px;
+      margin-top: 20px;
+      background: rgba(204, 204, 204, 0.116);
+    }
+
+    .container .wrap {
+      /* position: relative; */
+      cursor: grab;
+      /* 上下需要对齐, padding 和 margin 可以实现初始效果, 
+      但是如果 wrap 需要滚动的时候，滚动的起始位置会是 margin-left: -10px;的位置, 上下对齐会出现问题  */
+      padding-left: 10px;
+      margin-left: -10px;
+      /* 解决办法 - 目前未想到纯 css 的解决方案 */
+    }
+
+    .container .wrap li{
+      position: relative;
+      /* left: -100px; */
+    }
+
+    .body {
+      display: flex;
+    }
+
+    .body li {
+      width: 50%;
+      height: 300px;
+      border-radius: 10px;
+      background: white;
+      margin-right: 20px;
+      box-shadow: 0 0 10px 0 #0000003d;
+    }
+  </style>
+
+</head>
+
+<body>
+  <ul class="wrap">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+
+  <ul class="wrap wrap1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+
+  <div class="container">
+    <!-- 要求 wrap 和 body 是对齐的 -->
+    <ul class="wrap" id="move">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <ul class="body">
+      <li>1</li>
+      <li>2</li>
+    </ul>
+  </div>
+
+  <script>
+    // const ele = document.getElementById('move')
+    // const eleLis = ele.querySelectorAll('li')
+    // ele.addEventListener("mousedown", event => {
+    //   const dragstart = event => {
+    //     const x0 = event.x
+    //     console.log('start', x0)
+    //     const dragend = e =>{
+    //       const x1 = e.x
+    //       console.log('end', x1)
+    //       for(let i = 0; i < eleLis.length; i++){
+    //         eleLis[i].style.left = `${eleLis[i].style.left + (x1 - x0)}px`;
+    //       }
+    //     }
+    //     ele.addEventListener("dragend", dragend);
+    //   }
+    //   ele.addEventListener('dragstart', dragstart)
+    //   ele.addEventListener("mouseup", () => {
+    //     ele.removeEventListener("dragstart", dragstart);
+    //   });
+    // })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .loading_one_wrap {
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+      border: 4px dashed orange;
+      border-radius: 50%;
+      animation-name: whirling;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .loading_two_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      animation-name: whirling;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .circle {
+      width: 12px;
+      height: 12px;
+      align-items: center;
+      border-radius: 50%;
+      background: orange;
+      margin-right: 3px;
+    }
+
+    .circle:first-child{
+      opacity: 0.5;
+    }
+
+    @keyframes whirling {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading_one_wrap"></div>
+  <div class="loading_two_wrap">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</body>
+
+</html>
